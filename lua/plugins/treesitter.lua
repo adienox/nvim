@@ -3,7 +3,20 @@ return { -- Highlight, edit, and navigate code
   event = 'VeryLazy',
   build = ':TSUpdate',
   opts = {
-    ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'vim', 'regex', 'vimdoc', 'yaml' },
+    ensure_installed = {
+      'bash',
+      'c',
+      'diff',
+      'html',
+      'lua',
+      'luadoc',
+      'markdown',
+      'markdown_inline',
+      'vim',
+      'regex',
+      'vimdoc',
+      'yaml',
+    },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
