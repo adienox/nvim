@@ -227,10 +227,56 @@ return {
       color = { fg = colors.yellow, gui = 'bold' },
       padding = 0,
     }
+
+    local count_words_in_range = function(start_line, end_line)
+      -- Adjust the end_line to be inclusive
+      end_line = end_line + 1
+
+      -- Get the lines from the buffer in the specified range
+      local lines = vim.api.nvim_buf_get_lines(0, start_line, end_line, false)
+
+      local content = table.concat(lines, ' ')
+
+      -- Count the words in the content
+      local word_count = 0
+      for _ in string.gmatch(content, '%S+') do
+        word_count = word_count + 1
+      end
+
+      return word_count
+    end
+
+    local get_end_line = function()
+      local firstline = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
+      local endline = 0
+      if firstline == '---' then
+        local lines = vim.api.nvim_buf_get_lines(0, 1, -1, false)
+        for i, line in ipairs(lines) do
+          if line == '---' then
+            endline = i
+            break
+          end
+        end
+      end
+      return endline
+    end
+
+    local calc_word_count = function()
+      local words = vim.fn.wordcount()['words']
+
+      local filetype = vim.bo.filetype
+      local innerwords = 0
+      if filetype == 'markdown' then
+        local endline = get_end_line()
+        innerwords = count_words_in_range(0, endline)
+      end
+
+      return words - innerwords .. ' 󰯂 '
+    end
+
     ins_right {
       function()
-        local words = vim.fn.wordcount()['words']
-        return words .. ' 󰯂 '
+        return calc_word_count()
       end,
       cond = function()
         local ft = vim.opt_local.filetype:get()
