@@ -246,7 +246,7 @@ return {
       return word_count
     end
 
-    local get_end_line = function()
+    local get_metadata_range = function()
       local firstline = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
       local endline = 0
       if firstline == '---' then
@@ -267,7 +267,7 @@ return {
       local filetype = vim.bo.filetype
       local innerwords = 0
       if filetype == 'markdown' then
-        local endline = get_end_line()
+        local endline = get_metadata_range()
         innerwords = count_words_in_range(0, endline)
       end
 
