@@ -31,7 +31,7 @@ return {
         disabled_filetypes = {
           statusline = { 'veil', 'alpha' },
         },
-        ignore_focus = { 'NvimTree' },
+        ignore_focus = { 'NvimTree', 'neo-tree' },
         theme = {
           -- We are going to use lualine_c an lualine_x as left and
           -- right section. Both are highlighted by c theme .  So we
@@ -187,7 +187,7 @@ return {
       -- Lsp server name .
       function()
         local msg = 'No Active Lsp'
-        local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+        local buf_ft = vim.bo.filetype
         local clients = vim.lsp.get_active_clients()
         if next(clients) == nil then
           return msg
