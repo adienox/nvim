@@ -3,7 +3,7 @@ return {
   cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
   keys = {
     {
-      '<leader>e',
+      '<leader>-',
       mode = { 'n' },
       function()
         local nvimTree = require 'nvim-tree.api'
