@@ -53,31 +53,6 @@ return {
   },
 
   {
-    'folke/twilight.nvim',
-    cmd = { 'Twilight' },
-    keys = {
-      {
-        '<leader>tw',
-        mode = { 'n' },
-        '<cmd>Twilight<CR>',
-        desc = 'T[W]ilight',
-      },
-    },
-    opts = {
-      context = 0,
-      expand = {
-        'function',
-        'method',
-        'table',
-        'if_statement',
-        -- markdown
-        'paragraph',
-        'fenced_code_block',
-      },
-    },
-  },
-
-  {
     'folke/todo-comments.nvim',
     event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
