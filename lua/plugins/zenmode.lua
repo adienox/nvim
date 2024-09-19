@@ -40,7 +40,10 @@ return {
       },
 
       on_open = function(win)
-        vim.cmd 'RenderMarkdown disable'
+        local filetype = vim.bo.filetype
+        if filetype == 'markdown' then
+          vim.cmd 'RenderMarkdown disable'
+        end
         vim.cmd 'normal! zz'
         vim.keymap.set({ 'n', 'i' }, '<C-n>', function()
           vim.fn.jobstart { 'kitten', '@', 'set-font-size', '0' }
@@ -56,7 +59,10 @@ return {
       end,
 
       on_close = function()
-        vim.cmd 'RenderMarkdown enable'
+        local filetype = vim.bo.filetype
+        if filetype == 'markdown' then
+          vim.cmd 'RenderMarkdown enable'
+        end
         vim.api.nvim_del_augroup_by_name 'zen-mode-toggle'
         vim.keymap.set({ 'n', 'i' }, '<C-n>', function()
           vim.fn.jobstart { 'tmux', 'switch-client', '-l' }
