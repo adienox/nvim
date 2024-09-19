@@ -144,16 +144,11 @@ return {
         -- still show a recording occuring because `vim.fn.reg_recording` hasn't emptied yet.
         -- So what we need to do is wait a tiny amount of time (in this instance 50 ms) to
         -- ensure `vim.fn.reg_recording` is purged before asking lualine to refresh.
-        local timer = vim.loop.new_timer()
-        timer:start(
-          50,
-          0,
-          vim.schedule_wrap(function()
-            lualine.refresh {
-              place = { 'statusline' },
-            }
-          end)
-        )
+        vim.defer_fn(function()
+          lualine.refresh {
+            place = { 'statusline' },
+          }
+        end, 50)
       end,
     })
 
@@ -188,7 +183,7 @@ return {
       function()
         local msg = 'No Active Lsp'
         local buf_ft = vim.bo.filetype
-        local clients = vim.lsp.get_active_clients()
+        local clients = vim.lsp.get_clients()
         if next(clients) == nil then
           return msg
         end
