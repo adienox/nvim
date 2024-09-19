@@ -39,6 +39,7 @@ return {
     },
 
     on_open = function(win)
+      vim.cmd 'RenderMarkdown disable'
       vim.cmd 'normal! zz'
       vim.keymap.set({ 'n', 'i' }, '<C-n>', function()
         vim.fn.jobstart { 'kitten', '@', 'set-font-size', '0' }
@@ -54,6 +55,7 @@ return {
     end,
 
     on_close = function()
+      vim.cmd 'RenderMarkdown enable'
       vim.api.nvim_del_augroup_by_name 'zen-mode-toggle'
       vim.keymap.set({ 'n', 'i' }, '<C-n>', function()
         vim.fn.jobstart { 'tmux', 'switch-client', '-l' }
