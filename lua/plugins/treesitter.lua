@@ -16,6 +16,7 @@ return { -- Highlight, edit, and navigate code
       'regex',
       'vimdoc',
       'yaml',
+      'latex',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
