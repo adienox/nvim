@@ -20,7 +20,7 @@ return {
         desc = '[D]aily Note',
       },
       {
-        '<leader>od',
+        '<leader>oy',
         '<cmd>ObsidianYesterday<CR>',
         mode = 'n',
         desc = '[Y]esterday Note',
