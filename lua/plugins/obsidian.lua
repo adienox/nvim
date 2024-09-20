@@ -64,7 +64,7 @@ return {
         folder = 'Logs',
         date_format = '%Y/Daily/%m/%Y-%m-%d',
         alias_format = '%B %-d, %Y',
-        default_tags = { 'note/daily' },
+        default_tags = { 'daily' },
         template = 'daily.md',
       },
 
