@@ -26,7 +26,12 @@ return {
               -- image_path is the potentially relative path to the image. for
               -- markdown it's `![](this text)`
 
-              if string.find(document_path, 'Documents/Zettels') then
+              local inside_vault = string.find(document_path, 'Documents/Zettels')
+              local relative_path = string.find(image_path, 'Extras/Media/imgs/')
+
+              if not relative_path and inside_vault then
+                return '~/Documents/Zettels/Extras/Media/imgs/' .. image_path
+              elseif inside_vault then
                 return '~/Documents/Zettels/' .. image_path
               else
                 return fallback(document_path, image_path)
