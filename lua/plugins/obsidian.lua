@@ -20,6 +20,12 @@ return {
         desc = '[D]aily Note',
       },
       {
+        '<leader>ot',
+        '<cmd>ObsidianTomorrow<CR>',
+        mode = 'n',
+        desc = '[T]omorrow Note',
+      },
+      {
         '<leader>oy',
         '<cmd>ObsidianYesterday<CR>',
         mode = 'n',
