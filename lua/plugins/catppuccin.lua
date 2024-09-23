@@ -6,10 +6,10 @@ return {
     transparent_background = true,
     integrations = {
       notify = true,
-      fidget = true,
       lsp_saga = true,
       noice = true,
       lsp_trouble = true,
+      harpoon = true,
       which_key = true,
     },
     custom_highlights = function(colors)
