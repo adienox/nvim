@@ -12,6 +12,11 @@ return {
       harpoon = true,
       which_key = true,
     },
+    styles = {
+      comments = { 'italic' },
+      conditionals = { 'italic' },
+      loops = { 'italic' },
+    },
     custom_highlights = function(colors)
       return {
         UfoFoldedEllipsis = { fg = colors.overlay2, bg = colors.none },
