@@ -16,8 +16,7 @@ return {
       return {
         UfoFoldedEllipsis = { fg = colors.overlay2, bg = colors.none },
         TabLineSel = { bg = colors.pink },
-        CmpBorder = { fg = colors.surface2 },
-        Pmenu = { bg = colors.none },
+
         RenderMarkdownLink = { fg = colors.mauve, style = { 'underline' } },
         Label = { fg = colors.mauve, style = { 'underline' } },
         RenderMarkdownH1Bg = { bg = '#000000' },
@@ -26,8 +25,18 @@ return {
         RenderMarkdownH4Bg = { bg = '#000000' },
         RenderMarkdownH5Bg = { bg = '#000000' },
         RenderMarkdownH6Bg = { bg = '#000000' },
+        ['@markup.italic'] = { fg = colors.green },
+        ['@markup.strong'] = { fg = colors.red },
+
         NoiceLspProgress = { link = 'NonText' },
         NoiceLspProgressTitle = { link = 'Constant' },
+
+        TelescopePromptTitle = { fg = colors.pink },
+        TelescopeResultsTitle = { fg = colors.peach },
+        TelescopePreviewTitle = { fg = colors.green },
+
+        FloatBorder = { fg = colors.base },
+        NormalFloat = { fg = colors.surface2 },
       }
     end,
   },
