@@ -1,16 +1,3 @@
-local function border(hl_name)
-  return {
-    { '┌', hl_name },
-    { '─', hl_name },
-    { '┐', hl_name },
-    { '│', hl_name },
-    { '┘', hl_name },
-    { '─', hl_name },
-    { '└', hl_name },
-    { '│', hl_name },
-  }
-end
-
 return { -- Autocompletion
   'hrsh7th/nvim-cmp',
   version = false,
@@ -81,10 +68,11 @@ return { -- Autocompletion
         completion = {
           side_padding = 1,
           scrollbar = false,
-          border = border 'CmpBorder',
+          border = 'single',
+          winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
         },
         documentation = {
-          border = border 'CmpDocBorder',
+          border = 'single',
         },
       },
       experimental = {
