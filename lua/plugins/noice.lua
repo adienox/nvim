@@ -50,6 +50,11 @@ return {
           style = 'single',
         },
       },
+      hover = {
+        border = {
+          style = 'single',
+        },
+      },
     },
 
     format = {
