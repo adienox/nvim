@@ -12,62 +12,58 @@ return {
       sync_on_ui_close = true,
     },
   },
-  keys = function()
-    local harpoon = require 'harpoon'
-    local keys = {
-      {
-        '<leader>ha',
-        function()
-          harpoon:list():add()
-        end,
-        desc = '[A]dd Mark',
-      },
-      {
-        '<leader>hl',
-        function()
-          harpoon.ui:toggle_quick_menu(harpoon:list())
-        end,
-        desc = '[L]ist Marks',
-      },
-      {
-        '<leader>hp',
-        function()
-          harpoon:list():prev()
-        end,
-        desc = '[P]revious Mark',
-      },
-      {
-        '<leader>hn',
-        function()
-          harpoon:list():next()
-        end,
-        desc = '[N]ext Mark',
-      },
-      {
-        '<C-h>',
-        function()
-          harpoon:list():select(1)
-        end,
-      },
-      {
-        '<C-j>',
-        function()
-          harpoon:list():select(2)
-        end,
-      },
-      {
-        '<C-k>',
-        function()
-          harpoon:list():select(3)
-        end,
-      },
-      {
-        '<C-l>',
-        function()
-          harpoon:list():select(4)
-        end,
-      },
-    }
-    return keys
-  end,
+  keys = {
+    {
+      '<leader>ha',
+      function()
+        require('harpoon'):list():add()
+      end,
+      desc = '[A]dd Mark',
+    },
+    {
+      '<leader>hl',
+      function()
+        require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())
+      end,
+      desc = '[L]ist Marks',
+    },
+    {
+      '<leader>hp',
+      function()
+        require('harpoon'):list():prev()
+      end,
+      desc = '[P]revious Mark',
+    },
+    {
+      '<leader>hn',
+      function()
+        require('harpoon'):list():next()
+      end,
+      desc = '[N]ext Mark',
+    },
+    {
+      '<C-h>',
+      function()
+        require('harpoon'):list():select(1)
+      end,
+    },
+    {
+      '<C-j>',
+      function()
+        require('harpoon'):list():select(2)
+      end,
+    },
+    {
+      '<C-k>',
+      function()
+        require('harpoon'):list():select(3)
+      end,
+    },
+    {
+      '<C-l>',
+      function()
+        require('harpoon'):list():select(4)
+      end,
+    },
+  },
 }
