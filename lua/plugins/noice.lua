@@ -38,6 +38,14 @@ return {
       lsp_doc_border = true, -- add a border to hover docs and signature help
     },
 
+    views = {
+      cmdline_popup = {
+        border = {
+          style = 'single',
+        },
+      },
+    },
+
     format = {
       lsp_progress = {
         { '{data.progress.message} ', hl_group = 'NoiceLspProgress' },

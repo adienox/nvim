@@ -38,6 +38,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
           vertical = { width = 0.55, height = 0.9, preview_cutoff = 0 },
           prompt_position = 'top',
         },
+        borderchars = {
+          { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+          prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+          results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+          preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+        },
         path_display = { 'smart' },
         prompt_position = 'top',
         prompt_prefix = '  ',
