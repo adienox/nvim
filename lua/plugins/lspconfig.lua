@@ -5,6 +5,7 @@ return {
 
     dependencies = {
       'dundalek/lazy-lsp.nvim',
+      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       require('lspconfig.ui.windows').default_options.border = 'single'
