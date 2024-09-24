@@ -32,6 +32,7 @@ return {
         RenderMarkdownH6Bg = { bg = '#000000' },
         ['@markup.italic'] = { fg = colors.green },
         ['@markup.strong'] = { fg = colors.red },
+        ['@markup.raw'] = { fg = colors.overlay2, style = { 'italic' } }, -- markdown inline
 
         HelpviewHeading1 = { fg = colors.green, bg = '#000000' },
         HelpviewHeading4 = { fg = colors.pink, bg = '#000000' },
