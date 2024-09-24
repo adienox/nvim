@@ -32,12 +32,12 @@ return {
         RenderMarkdownH6Bg = { bg = '#000000' },
         ['@markup.italic'] = { fg = colors.green },
         ['@markup.strong'] = { fg = colors.red },
-        ['@markup.raw'] = { fg = colors.overlay2, style = { 'italic' } }, -- markdown inline
+        ['@markup.raw.markdown_inline'] = { fg = colors.overlay2, style = { 'italic' } },
 
         HelpviewHeading1 = { fg = colors.green, bg = '#000000' },
         HelpviewHeading4 = { fg = colors.pink, bg = '#000000' },
         HelpviewCode = { bg = '#000000' },
-        HelpviewInlineCode = { link = '@markup.raw' },
+        HelpviewInlineCode = { link = '@markup.raw.markdown_inline' },
         HelpviewCodeLanguage = { fg = colors.peach, bg = '#000000' },
         HelpviewTaglink = { fg = colors.mauve, bg = colors.none },
         HelpviewOptionlink = { fg = colors.mauve, bg = colors.none, style = { 'underline' } },
