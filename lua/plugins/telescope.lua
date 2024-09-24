@@ -58,6 +58,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Enable Telescope extensions if they are installed
     pcall(telescope.load_extension, 'fzf')
     pcall(telescope.load_extension, 'ui-select')
+    pcall(telescope.load_extension, 'noice')
 
     -- See `:help telescope.builtin`
     local set = vim.keymap.set
@@ -65,6 +66,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
     set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+    set('n', '<leader>sn', '<cmd>Telescope noice<cr>', { desc = '[S]earch [N]oice' })
     set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
     set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
