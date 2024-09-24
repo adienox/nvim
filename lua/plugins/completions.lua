@@ -73,6 +73,7 @@ return { -- Autocompletion
         },
         documentation = {
           border = 'single',
+          winhighlight = 'FloatBorder:FloatBorderSecondary',
         },
       },
       experimental = {

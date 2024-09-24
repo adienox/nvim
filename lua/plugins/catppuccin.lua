@@ -52,7 +52,7 @@ return {
         TelescopePreviewTitle = { fg = colors.green },
 
         FloatBorder = { fg = colors.base },
-        NormalFloat = { fg = colors.surface2 },
+        FloatBorderSecondary = { fg = colors.surface2 },
       }
     end,
   },
