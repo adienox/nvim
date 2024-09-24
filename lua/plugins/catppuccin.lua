@@ -36,6 +36,8 @@ return {
         ['@markup.raw.markdown_inline'] = { fg = colors.overlay2, style = { 'italic' } },
 
         HelpviewHeading1 = { fg = colors.green, bg = '#000000' },
+        HelpviewHeading2 = { fg = colors.teal, bg = '#000000' },
+        HelpviewHeading3 = { fg = colors.yellow, bg = '#000000' },
         HelpviewHeading4 = { fg = colors.pink, bg = '#000000' },
         HelpviewCode = { bg = '#000000' },
         HelpviewInlineCode = { link = '@markup.raw.markdown_inline' },
