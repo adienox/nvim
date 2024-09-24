@@ -9,6 +9,7 @@ return {
       lsp_saga = true,
       noice = true,
       lsp_trouble = true,
+      neotree = true,
       harpoon = true,
       which_key = true,
     },
