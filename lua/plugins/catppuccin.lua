@@ -33,6 +33,15 @@ return {
         ['@markup.italic'] = { fg = colors.green },
         ['@markup.strong'] = { fg = colors.red },
 
+        HelpviewHeading1 = { fg = colors.green, bg = '#000000' },
+        HelpviewHeading4 = { fg = colors.pink, bg = '#000000' },
+        HelpviewCode = { bg = '#000000' },
+        HelpviewInlineCode = { link = '@markup.raw' },
+        HelpviewCodeLanguage = { fg = colors.peach, bg = '#000000' },
+        HelpviewTaglink = { fg = colors.mauve, bg = colors.none },
+        HelpviewOptionlink = { fg = colors.mauve, bg = colors.none, style = { 'underline' } },
+        HelpviewMentionlink = { fg = colors.mauve, bg = colors.none, style = { 'underline' } },
+
         NoiceLspProgress = { link = 'NonText' },
         NoiceLspProgressTitle = { link = 'Constant' },
 
