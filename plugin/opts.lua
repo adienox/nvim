@@ -14,6 +14,12 @@ opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
+-- disable line wrap
+opt.wrap = false
+
+-- better virtual block mode
+opt.virtualedit = 'block'
+
 -- remove ~
 opt.fillchars = { eob = ' ' }
 
