@@ -1,5 +1,11 @@
 return {
-  { 'numToStr/Comment.nvim', event = 'VeryLazy', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    event = 'VeryLazy',
+    opts = {
+      ignore = '^$',
+    },
+  },
 
   {
     'mbbill/undotree',
