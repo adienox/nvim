@@ -44,12 +44,6 @@ return {
         desc = '[N]ew Note',
       },
       {
-        '<leader>os',
-        '<cmd>ObsidianQuickSwitch<CR>',
-        mode = 'n',
-        desc = '[S]earch Notes',
-      },
-      {
         '<leader>oc',
         '<cmd>ObsidianTemplate current<CR>',
         mode = 'n',
