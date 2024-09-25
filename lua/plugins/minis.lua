@@ -33,6 +33,25 @@ return {
         scope = { enabled = false },
       }
 
+      -- Disable indentscope in filetypes
+      local disabled = {
+        'harpoon',
+        'help',
+        'terminal',
+        'NvimTree',
+        'alpha',
+        'markdown',
+      }
+
+      vim.api.nvim_create_autocmd({ 'FileType', 'BufNew', 'BufEnter', 'BufWinEnter' }, {
+        pattern = '*',
+        callback = function()
+          if disabled[vim.bo.filetype] ~= nil or vim.bo.buftype ~= '' then
+            vim.b.miniindentscope_disable = true
+          end
+        end,
+      })
+
       require('mini.indentscope').setup {
         draw = {
           delay = 40,

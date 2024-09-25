@@ -57,22 +57,3 @@ autocmd('QuitPre', {
     end
   end,
 })
-
--- Disable indentscope in filetypes
-local disabled = {
-  'harpoon',
-  'help',
-  'terminal',
-  'NvimTree',
-  'alpha',
-  'markdown',
-}
-
-autocmd({ 'FileType', 'BufNew', 'BufEnter', 'BufWinEnter' }, {
-  pattern = '*',
-  callback = function()
-    if disabled[vim.bo.filetype] ~= nil or vim.bo.buftype ~= '' then
-      vim.b.miniindentscope_disable = true
-    end
-  end,
-})
