@@ -19,6 +19,15 @@ return { -- Highlight, edit, and navigate code
       'latex',
     },
     auto_install = true,
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = 'sn',
+        node_incremental = 'si',
+        scope_incremental = 'sc',
+        node_decremental = 'sd',
+      },
+    },
     highlight = {
       enable = true,
       -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
