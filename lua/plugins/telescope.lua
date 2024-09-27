@@ -40,12 +40,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         prompt_prefix = '  ',
         selection_caret = ' ',
         sorting_strategy = 'ascending',
-        borderchars = {
-          { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-          prompt = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-          results = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-          preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-        },
+        borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       },
 
       extensions = {
