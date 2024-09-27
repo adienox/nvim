@@ -20,6 +20,8 @@ return {
     },
     custom_highlights = function(colors)
       return {
+        Comment = { fg = colors.overlay0 },
+
         UfoFoldedEllipsis = { fg = colors.overlay2, bg = colors.none },
         TabLineSel = { bg = colors.pink },
 
@@ -33,6 +35,7 @@ return {
         RenderMarkdownH6Bg = { bg = '#000000' },
         ['@markup.italic'] = { fg = colors.green },
         ['@markup.strong'] = { fg = colors.red },
+        ['@markup.list.markdown'] = { fg = colors.overlay0 },
         ['@markup.raw.markdown_inline'] = { fg = colors.overlay2, style = { 'italic' } },
 
         HelpviewHeading1 = { fg = colors.green, bg = '#000000' },
