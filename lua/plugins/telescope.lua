@@ -4,7 +4,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
   cmd = {
     'Telescope',
   },
-  branch = '0.1.x',
   dependencies = {
     {
       'nvim-telescope/telescope-fzf-native.nvim',
