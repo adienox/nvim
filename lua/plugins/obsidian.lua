@@ -155,4 +155,13 @@ return {
       code = { style = 'language', sign = false },
     },
   },
+  {
+    'bullets-vim/bullets.vim',
+    ft = {
+      'markdown',
+    },
+    config = function()
+      vim.g.bullets_outline_levels = { 'std-' }
+    end,
+  },
 }
