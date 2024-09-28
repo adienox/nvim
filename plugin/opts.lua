@@ -3,14 +3,8 @@
 --  For more options, you can see `:help option-list`
 local opt = vim.opt
 
-vim.o.foldcolumn = '0'
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.g.tmux_navigator_no_mappings = 1
 
 -- Indenting
 opt.expandtab = true
