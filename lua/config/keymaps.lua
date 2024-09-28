@@ -15,6 +15,11 @@ set({ 'n', 'i' }, '<C-n>', function()
   vim.fn.jobstart { 'tmux', 'switch-client', '-l' }
 end)
 
+set('n', '<leader>ms', function()
+  local spell = vim.opt.spell:get()
+  vim.opt.spell = not spell
+end, { desc = '[S]pellcheck' })
+
 set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'E[X]ecute current file' })
 set('n', '<leader>n', '<cmd>Noice dismiss<CR>', { desc = 'Dismiss [N]otifications' })
 
