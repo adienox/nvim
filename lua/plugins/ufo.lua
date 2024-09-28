@@ -1,7 +1,13 @@
 return {
   'kevinhwang91/nvim-ufo',
-  event = 'BufEnter',
+  event = 'UIEnter',
   dependencies = { 'kevinhwang91/promise-async', 'neovim/nvim-lspconfig' },
+  init = function()
+    vim.o.foldcolumn = '0'
+    vim.o.foldlevel = 99
+    vim.o.foldlevelstart = 99
+    vim.o.foldenable = true
+  end,
   config = function()
     local ufo = require 'ufo'
     local set = vim.keymap.set
