@@ -51,7 +51,7 @@ return {
       },
     },
     opts = {
-      -- ui = { enable = false },
+      ui = { enable = false },
 
       workspaces = {
         {
@@ -150,7 +150,6 @@ return {
       },
       bullet = {
         icons = { '•', '◦', '◆', '◇' },
-        right_pad = 1,
       },
       link = { hyperlink = '' },
       code = { style = 'language', sign = false },
