@@ -222,6 +222,19 @@ return {
     -- https://github.com/miversen33/miversen-dotfiles/blob/0c68c53cde78da453c056f021e839ae240c5bf7a/editors/nvim/lua/plugins/init.lua#L130-L308
     ins_right {
       function()
+        local spell = vim.opt.spell:get()
+        if not spell then
+          return '  '
+        else
+          return ''
+        end
+      end,
+      cond = conditions.in_text_file,
+      color = { fg = colors.red, gui = 'bold' },
+      padding = 0,
+    }
+    ins_right {
+      function()
         local starts = vim.fn.line 'v'
         local ends = vim.fn.line '.'
         local count = starts <= ends and ends - starts + 1 or starts - ends + 1
