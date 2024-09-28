@@ -71,9 +71,23 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
       capabilities.textDocument.completion.completionItem.snippetSupport = true
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
 
       local lspconfig = require 'lspconfig'
+
+      local language_servers = { 'gopls', 'nil_ls' }
+      for _, ls in ipairs(language_servers) do
+        lspconfig[ls].setup {
+          capabilities = capabilities,
+          -- you can add other fields for setting up lsp server in this table
+        }
+      end
+
       lspconfig.lua_ls.setup {
+        capabilities = capabilities,
         settings = {
           Lua = {
             completion = {
@@ -84,8 +98,6 @@ return {
           },
         },
       }
-      lspconfig.gopls.setup {}
-      lspconfig.nil_ls.setup {}
     end,
   },
   {
