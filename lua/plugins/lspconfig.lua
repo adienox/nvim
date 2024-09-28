@@ -78,7 +78,7 @@ return {
 
       local lspconfig = require 'lspconfig'
 
-      local language_servers = { 'gopls', 'nil_ls' }
+      local language_servers = { 'gopls', 'nil_ls', 'bashls', 'nushell' }
       for _, ls in ipairs(language_servers) do
         lspconfig[ls].setup {
           capabilities = capabilities,
