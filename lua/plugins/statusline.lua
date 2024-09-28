@@ -21,6 +21,17 @@ return {
         local gitdir = vim.fn.finddir('.git', filepath .. ';')
         return gitdir and #gitdir > 0 and #gitdir < #filepath
       end,
+      in_text_file = function()
+        local ft = vim.opt_local.filetype:get()
+        local count = {
+          latex = true,
+          tex = true,
+          text = true,
+          markdown = true,
+          vimwiki = true,
+        }
+        return count[ft] ~= nil
+      end,
     }
 
     local config = {
@@ -273,17 +284,7 @@ return {
       function()
         return calc_word_count()
       end,
-      cond = function()
-        local ft = vim.opt_local.filetype:get()
-        local count = {
-          latex = true,
-          tex = true,
-          text = true,
-          markdown = true,
-          vimwiki = true,
-        }
-        return count[ft] ~= nil
-      end,
+      cond = conditions.in_text_file,
       color = { fg = colors.mauve, gui = 'bold' },
       padding = 0,
     }
