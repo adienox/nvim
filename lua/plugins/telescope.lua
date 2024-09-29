@@ -29,6 +29,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['<C-j>'] = actions.move_selection_next,
             ['<C-k>'] = actions.move_selection_previous,
           },
+          n = {
+            ['d'] = actions.delete_buffer,
+          },
         },
         layout_config = {
           height = 0.90,
