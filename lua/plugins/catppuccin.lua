@@ -51,6 +51,9 @@ return {
 
         NoiceLspProgress = { link = 'NonText' },
         NoiceLspProgressTitle = { link = 'Constant' },
+        NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
+
+        NotifyInfoBorder = { fg = colors.base },
 
         TelescopePromptTitle = { fg = colors.pink },
         TelescopeResultsTitle = { fg = colors.peach },
