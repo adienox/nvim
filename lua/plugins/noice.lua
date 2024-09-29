@@ -57,6 +57,18 @@ return {
       },
     },
 
+    cmdline = {
+      format = {
+        cmdline = { title = '' },
+        search_down = { title = '' },
+        search_up = { title = '' },
+        filter = { title = '' },
+        lua = { title = '' },
+        help = { title = '' },
+        input = { title = '' },
+      },
+    },
+
     format = {
       lsp_progress = {
         { '{data.progress.message} ', hl_group = 'NoiceLspProgress' },
