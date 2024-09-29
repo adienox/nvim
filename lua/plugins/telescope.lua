@@ -60,6 +60,15 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- See `:help telescope.builtin`
     local set = vim.keymap.set
+    set('n', '<leader><leader>', function()
+      builtin.buffers {
+        sort_mru = true,
+        sort_lastused = true,
+        initial_mode = 'normal',
+      }
+    end, {
+      desc = 'Search Buffers',
+    })
     set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })

@@ -10,7 +10,6 @@ return {
     { '<leader>e', '<cmd>Neotree toggle float<CR>', silent = true, desc = 'Float File Explorer' },
     { '<leader><Tab>', '<cmd>Neotree toggle left<CR>', silent = true, desc = 'Left File Explorer' },
     { '<leader>sb', '<cmd>Neotree buffers float<CR>', silent = true, desc = 'Buffer Explorer' },
-    { '<leader><leader>', '<cmd>Neotree buffers float<CR>', silent = true, desc = 'Buffer Explorer' },
   },
   opts = {
     close_if_last_window = true,
