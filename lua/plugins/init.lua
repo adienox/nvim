@@ -27,7 +27,7 @@ return {
       {
         '<leader>tt',
         mode = { 'n' },
-        '<cmd>TroubleToggle<CR>',
+        '<cmd>Trouble diagnostics<CR>',
         desc = '[T]rouble',
       },
     },
