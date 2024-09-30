@@ -47,9 +47,8 @@ end
 local function file_button(fn, sc, short_fn)
   local fb_hl = {}
   local ico_txt = ''
-  local cd_cmd = ' | cd %:p:h'
 
-  local file_button_el = button(sc, short_fn, '<cmd>e ' .. vim.fn.fnameescape(fn) .. cd_cmd .. ' <CR>')
+  local file_button_el = button(sc, short_fn, '<cmd>e ' .. vim.fn.fnameescape(fn) .. ' <CR>')
 
   local fn_start = short_fn:match '.*[/\\]'
   if fn_start ~= nil then
