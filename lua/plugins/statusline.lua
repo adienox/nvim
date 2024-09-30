@@ -85,7 +85,7 @@ return {
     ins_left {
       -- mode component
       function()
-        return ''
+        return ' '
       end,
       color = function()
         -- auto change color according to neovims mode
@@ -126,7 +126,7 @@ return {
           return ' @' .. recording_register
         end
       end,
-
+      padding = { right = 1 },
       color = { fg = colors.red, gui = 'bold' },
     }
 
@@ -168,6 +168,7 @@ return {
       icons_enabled = true,
       cond = conditions.buffer_not_empty,
       color = { fg = colors.mauve, gui = 'bold' },
+      padding = 0,
     }
 
     ins_left {
