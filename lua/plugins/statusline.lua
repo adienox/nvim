@@ -166,7 +166,6 @@ return {
     ins_left {
       function()
         local ok, statusline = pcall(require, 'arrow.statusline')
-        local per = require 'arrow.persist'
         if ok then
           return statusline.text_for_statusline_with_icons()
         else
