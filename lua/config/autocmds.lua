@@ -42,7 +42,7 @@ local disabled = {
   'markdown',
 }
 
-vim.api.nvim_create_autocmd({ 'FileType', 'BufNew', 'BufEnter', 'BufWinEnter' }, {
+autocmd({ 'FileType', 'BufNew', 'BufEnter', 'BufWinEnter' }, {
   pattern = '*',
   callback = function()
     if disabled[vim.bo.filetype] ~= nil or vim.bo.buftype ~= '' then
