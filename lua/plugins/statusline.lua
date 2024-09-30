@@ -164,6 +164,20 @@ return {
     })
 
     ins_left {
+      function()
+        local ok, statusline = pcall(require, 'arrow.statusline')
+        local per = require 'arrow.persist'
+        if ok then
+          return statusline.text_for_statusline_with_icons()
+        else
+          return ''
+        end
+      end,
+      color = { fg = colors.green, gui = 'bold' },
+      padding = { right = 1 },
+    }
+
+    ins_left {
       'filename',
       icons_enabled = true,
       cond = conditions.buffer_not_empty,
