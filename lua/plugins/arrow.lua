@@ -3,8 +3,8 @@ return {
   opts = {
     show_icons = true,
     window = { border = 'single' },
-    leader_key = ';', -- Recommended to be a single key
-    buffer_leader_key = 'gl', -- Per Buffer Mappings
+    leader_key = ';',
+    buffer_leader_key = 'gl',
     index_keys = 'hjkl123456789',
   },
 }
