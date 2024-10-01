@@ -2,6 +2,9 @@ return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   event = 'VeryLazy',
   build = ':TSUpdate',
+  dependencies = {
+    { 'nushell/tree-sitter-nu', build = ':TSUpdate nu' },
+  },
   opts = {
     ensure_installed = {
       'bash',
