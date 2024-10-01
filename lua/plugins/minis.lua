@@ -15,6 +15,8 @@ return {
 
       require('mini.splitjoin').setup()
 
+      require('mini.comment').setup()
+
       -- Better Around/Inside textobjects
       --
       --  - va)  - [V]isually select [A]round [)]paren
