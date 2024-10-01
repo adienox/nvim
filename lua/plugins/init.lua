@@ -41,21 +41,6 @@ return {
   },
 
   {
-    'Wansmer/treesj',
-    cmd = 'TSJToggle',
-    keys = {
-      {
-        '<leader>ts',
-        mode = { 'n' },
-        '<cmd>TSJToggle<CR>',
-        desc = '[S]plit toggle',
-      },
-    },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    opts = {},
-  },
-
-  {
     'okuuva/auto-save.nvim',
     cmd = 'ASToggle',
     event = { 'InsertLeave' },
