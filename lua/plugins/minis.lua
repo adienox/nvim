@@ -11,6 +11,8 @@ return {
       },
     },
     config = function()
+      require('mini.pairs').setup()
+
       -- Better Around/Inside textobjects
       --
       --  - va)  - [V]isually select [A]round [)]paren

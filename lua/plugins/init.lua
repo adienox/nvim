@@ -86,10 +86,4 @@ return {
       'nvim-treesitter/nvim-treesitter',
     },
   },
-
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {},
-  },
 }
