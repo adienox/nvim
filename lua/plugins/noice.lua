@@ -55,6 +55,11 @@ return {
           style = 'single',
         },
       },
+      cmdline_input = {
+        border = {
+          style = 'single',
+        },
+      },
     },
 
     cmdline = {
