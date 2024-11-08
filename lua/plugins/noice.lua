@@ -10,6 +10,7 @@ return {
         ['cmp.entry.get_documentation'] = true,
         ['config.entry.get_documentation'] = true,
       },
+      hover = { silent = true },
     },
 
     routes = {

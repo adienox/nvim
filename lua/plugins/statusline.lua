@@ -181,7 +181,13 @@ return {
       icons_enabled = true,
       cond = conditions.buffer_not_empty,
       color = { fg = colors.mauve, gui = 'bold' },
-      padding = 0,
+      padding = { right = 2 },
+    }
+    ins_left {
+      'branch',
+      icon = '',
+      color = { fg = colors.lavender, gui = 'bold' },
+      padding = { right = 2 },
     }
 
     ins_left {
@@ -193,6 +199,7 @@ return {
         color_warn = { fg = colors.yellow },
         color_info = { fg = colors.sky },
       },
+      padding = { right = 1 },
     }
 
     -- Insert mid section. You can make any number of sections in neovim :)
@@ -229,8 +236,12 @@ return {
 
     -- Add components to right sections
     ins_right {
-      'location',
-      color = { fg = colors.fg, gui = 'bold' },
+      function()
+        local curpos = vim.fn.getcurpos()
+        return 'Ln ' .. curpos[2] .. ', Col ' .. curpos[3]
+      end,
+      color = { fg = colors.surface2, gui = 'bold' },
+      padding = { right = 2 },
     }
 
     -- https://github.com/miversen33/miversen-dotfiles/blob/0c68c53cde78da453c056f021e839ae240c5bf7a/editors/nvim/lua/plugins/init.lua#L130-L308
@@ -238,15 +249,16 @@ return {
       function()
         local spell = vim.opt.spell:get()
         if not spell then
-          return '  '
+          return ' '
         else
           return ''
         end
       end,
       cond = conditions.in_text_file,
       color = { fg = colors.red, gui = 'bold' },
-      padding = 0,
+      padding = { right = 1 },
     }
+
     ins_right {
       function()
         local starts = vim.fn.line 'v'
@@ -258,7 +270,7 @@ return {
         return vim.fn.mode():find '[Vv]' ~= nil
       end,
       color = { fg = colors.yellow, gui = 'bold' },
-      padding = 0,
+      padding = { right = 1 },
     }
 
     local count_words_in_range = function(start_line, end_line)
@@ -308,25 +320,10 @@ return {
     end
 
     ins_right {
-      function()
-        return calc_word_count()
-      end,
+      calc_word_count,
       cond = conditions.in_text_file,
       color = { fg = colors.mauve, gui = 'bold' },
-      padding = 0,
-    }
-
-    ins_right {
-      'fileformat',
-      fmt = string.upper,
-      icons_enabled = true,
-      color = { fg = colors.peach, gui = 'bold' },
-    }
-
-    ins_right {
-      'branch',
-      icon = '',
-      color = { fg = colors.lavender, gui = 'bold' },
+      padding = { right = 1 },
     }
 
     ins_right {
@@ -339,6 +336,7 @@ return {
         removed = { fg = colors.red },
       },
       cond = conditions.hide_in_width,
+      padding = { right = 1 },
     }
 
     -- Now don't forget to initialize lualine

@@ -3,9 +3,6 @@
 --  For more options, you can see `:help option-list`
 local opt = vim.opt
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2

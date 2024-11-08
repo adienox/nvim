@@ -20,22 +20,24 @@ return {
         vim.lsp.buf.hover()
       end
     end)
+
+    -- using https://github.com/kevinhwang91/nvim-ufo/issues/63#issuecomment-1214414494
     local ftMap = {
       vim = 'indent',
       python = { 'indent' },
       git = '',
     }
 
-    local function customizeSelector(bufnr)
-      local function handleFallbackException(err, providerName)
+    local customizeSelector = function(bufnr)
+      local handleFallbackException = function(err, providerName)
         if type(err) == 'string' and err:match 'UfoFallbackException' then
-          return require('ufo').getFolds(providerName, bufnr)
+          return ufo.getFolds(providerName, bufnr)
         else
           return require('promise').reject(err)
         end
       end
 
-      return require('ufo')
+      return ufo
         .getFolds(bufnr, 'lsp')
         :catch(function(err)
           return handleFallbackException(err, 'treesitter')

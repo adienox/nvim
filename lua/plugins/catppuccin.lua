@@ -10,7 +10,6 @@ return {
       noice = true,
       lsp_trouble = true,
       neotree = true,
-      harpoon = true,
       which_key = true,
     },
     styles = {
@@ -53,7 +52,7 @@ return {
         NoiceLspProgressTitle = { link = 'Constant' },
         NoiceCmdlinePopupBorder = { link = 'FloatBorder' },
 
-        NotifyInfoBorder = { fg = colors.base },
+        NotifyInfoBorder = { link = 'FloatBorder' },
 
         TelescopePromptTitle = { fg = colors.pink },
         TelescopeResultsTitle = { fg = colors.peach },
